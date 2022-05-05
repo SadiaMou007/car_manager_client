@@ -35,7 +35,24 @@ const Header = () => {
             </div>
             <div className="nav-items item-2">
               {user ? (
-                <button onClick={handleSignOut}>Logout</button>
+                <>
+                  <CustomLink to={"/manageItem"} className="nav-item">
+                    MANAGE ITEM
+                  </CustomLink>
+                  <CustomLink to={"/addItem"} className="nav-item">
+                    ADD ITEM
+                  </CustomLink>
+                  <CustomLink to={"/myItem"} className="nav-item">
+                    MY ITEM
+                  </CustomLink>
+
+                  <button
+                    onClick={handleSignOut}
+                    className="nav-item border-0 ms-3"
+                  >
+                    Logout
+                  </button>
+                </>
               ) : (
                 <CustomLink to={"/login"} className="nav-item">
                   LOGIN
