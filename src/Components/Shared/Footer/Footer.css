@@ -1,0 +1,31 @@
+.footer {
+  background-color: rgb(19, 16, 16);
+  color: white;
+}
+.pink {
+  color: #900c3f;
+  font-size: 20px;
+  margin: 0px 5px;
+}
+.icons {
+  font-size: 30px;
+  color: gray;
+}
+.icon-gap {
+  margin: 0 16px;
+  cursor: pointer;
+}
+.footer-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cpy-text {
+  color: gray;
+  border-top: 2px solid rgb(36, 34, 34);
+  text-align: center;
+}
+.footer-link {
+  color: rgb(163, 162, 162);
+  padding: 10px 5px;
+}

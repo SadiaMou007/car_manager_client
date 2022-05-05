@@ -17,6 +17,7 @@ import MyItem from "./Components/PrivateRoutes/MyItem/MyItem";
 import Inventories from "./Components/Home/Inventories/Inventories";
 import InventoryDetail from "./Components/Home/InventoryDetail/InventoryDetail";
 import Inventory from "./Components/Home/Inventory/Inventory";
+import Footer from "./Components/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -76,6 +77,7 @@ function App() {
         <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
       <ToastContainer />
+      <Footer></Footer>
     </div>
   );
 }

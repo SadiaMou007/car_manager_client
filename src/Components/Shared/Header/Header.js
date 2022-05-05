@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import "./Header.css";
+import { FaCar } from "react-icons/fa";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -17,7 +18,9 @@ const Header = () => {
     <Navbar sticky="top" expand="lg" className="navbar">
       <Container>
         <Navbar.Brand href="#">
-          <span className="brand">CAR MANAGER</span>
+          <span className="brand">
+            <FaCar /> CAR MANAGER
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

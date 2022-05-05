@@ -16,9 +16,6 @@ const Inventories = () => {
           ))}
         </Row>
       </div>
-      <Link to={"/inventory"} className="text-decoration-none text-primary">
-        Register
-      </Link>
     </div>
   );
 };
