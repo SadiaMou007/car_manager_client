@@ -11,3 +11,24 @@
 .caption {
   font-size: 40px;
 }
+.learnMore {
+  background-color: rgba(238, 171, 46, 0.959);
+  border: 0px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: rgb(14, 29, 94);
+  transition: all 0.5s ease-in;
+}
+.learnMore:hover {
+  background-color: rgba(179, 123, 19, 0.959);
+}
+.icon {
+  color: rgb(224, 193, 135);
+  font-size: 25px;
+}
+.text-blue {
+  color: rgb(14, 29, 94);
+}

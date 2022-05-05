@@ -16,39 +16,39 @@ const Header = () => {
   return (
     <Navbar sticky="top" expand="lg" className="navbar">
       <Container>
-        <Navbar.Brand href="#" className="">
-          CAR MANAGER
+        <Navbar.Brand href="#">
+          <span className="brand">CAR MANAGER</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className="myNav">
             <div className="nav-items item-1">
               <CustomLink to={"/home"} className="nav-item">
-                HOME
+                Home
               </CustomLink>
               <CustomLink to={"/about"} className="nav-item">
-                ABOUT
+                About
               </CustomLink>
               <CustomLink to={"/blogs"} className="nav-item">
-                BLOGS
+                Blogs
               </CustomLink>
             </div>
             <div className="nav-items item-2">
               {user ? (
                 <>
                   <CustomLink to={"/manageItem"} className="nav-item">
-                    MANAGE ITEM
+                    Manage Item
                   </CustomLink>
                   <CustomLink to={"/addItem"} className="nav-item">
-                    ADD ITEM
+                    Add Item
                   </CustomLink>
                   <CustomLink to={"/myItem"} className="nav-item">
-                    MY ITEM
+                    My Item
                   </CustomLink>
 
                   <button
                     onClick={handleSignOut}
-                    className="nav-item border-0 ms-3"
+                    className="nav-item border-0 ms-2 logout-btn"
                   >
                     Logout
                   </button>

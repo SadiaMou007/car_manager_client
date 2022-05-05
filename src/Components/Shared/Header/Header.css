@@ -1,5 +1,6 @@
 .navbar {
-  border-bottom: 1px solid rgb(247, 242, 242);
+  background-color: #581845;
+  color: white;
 }
 /* #581845
 #900C3F
@@ -11,21 +12,31 @@
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  font-weight: 500;
 }
-.nav-items {
-  width: 50%;
-}
+
 .item-1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 35%;
 }
 .item-2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 65%;
 }
 .nav-item {
-  color: darkcyan;
+  color: rgb(255, 255, 255);
+}
+.brand {
+  color: #d8bec6;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.logout-btn {
+  background-color: rgba(238, 171, 46, 0.959);
+  border: 0px;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 2px 5px;
 }
