@@ -1,9 +1,13 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase/firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
-
 import "./Header.css";
+
 const Header = () => {
+  const [user] = useAuthState(auth);
+
   return (
     <Navbar sticky="top" expand="lg" className="navbar">
       <Container>
@@ -25,9 +29,13 @@ const Header = () => {
               </CustomLink>
             </div>
             <div className="nav-items item-2">
-              <CustomLink to={"/login"} className="nav-item">
-                LOGIN
-              </CustomLink>
+              {user ? (
+                <button>Logout</button>
+              ) : (
+                <CustomLink to={"/login"} className="nav-item">
+                  LOGIN
+                </CustomLink>
+              )}
             </div>
           </div>
         </Navbar.Collapse>
