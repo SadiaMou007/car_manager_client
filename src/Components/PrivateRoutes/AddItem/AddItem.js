@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
 
 const AddItem = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [user] = useAuthState(auth);
   console.log(user.email);
 
@@ -23,6 +23,7 @@ const AddItem = () => {
       .then((result) => {
         console.log(result);
       });
+    reset();
   };
   return (
     <div className="full-height">
