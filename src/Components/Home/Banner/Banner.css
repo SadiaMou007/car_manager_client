@@ -1,5 +1,5 @@
 .banner-img {
-  height: 80vh;
+  height: 90vh;
   width: 100%;
 }
 @media only screen and (max-width: 768px) {
@@ -12,7 +12,7 @@
   font-size: 40px;
 }
 .learnMore {
-  background-color: rgba(238, 171, 46, 0.959);
+  background-color: none;
   border: 0px;
   padding: 10px;
   border-radius: 25px;

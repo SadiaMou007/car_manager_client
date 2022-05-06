@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="container">
-        <Row xs={1} md={2} lg={3} className="g-4">
+        <Row xs={1} md={3} lg={3} className="g-4">
           <div className="footer-items">
             <span className="brand ">
               <FaCar /> CAR MANAGER

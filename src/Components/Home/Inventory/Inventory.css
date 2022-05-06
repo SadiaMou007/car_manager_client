@@ -1,0 +1,36 @@
+.card {
+  background-image: linear-gradient(rgb(255, 251, 253), rgb(248, 247, 246));
+}
+.card-price {
+  background-color: #c70039;
+  padding: 5px;
+  border-radius: 25px;
+  color: white;
+}
+.card-img {
+  height: 180px;
+  width: 100%;
+}
+.start {
+  color: rgb(184, 179, 179);
+  font-size: 14px;
+  font-weight: 400;
+}
+.border-line {
+  border-top: 1px solid rgb(212, 209, 209);
+  border-bottom: 1px solid rgb(212, 209, 209);
+}
+.update {
+  display: flex;
+  justify-content: center;
+}
+.update-btn {
+  background-color: rgb(236, 165, 83);
+  border: 0;
+  font-weight: 600;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+.update-btn:hover {
+  background-color: rgb(179, 126, 65);
+}

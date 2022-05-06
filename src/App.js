@@ -30,6 +30,8 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="/detail" element={<SignUp></SignUp>}></Route>
+
         <Route
           path="/manageItem"
           element={
@@ -66,14 +68,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route
-          path="/inventory"
-          element={
-            <RequireAuth>
-              <Inventory></Inventory>
-            </RequireAuth>
-          }
-        ></Route>
+
         <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
       <ToastContainer />

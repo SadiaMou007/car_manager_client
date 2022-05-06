@@ -1,0 +1,31 @@
+.page-404 {
+  font-size: 64px;
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+.full-height {
+  min-height: 100vh;
+}
+.err-page {
+  background-color: rgba(236, 23, 23, 0.945);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+.error-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.not-found-link {
+  border: 1px solid white;
+  border-radius: 25px;
+  color: white;
+}
+.not-found-link:hover {
+  border: 1px solid gray;
+  color: lightgrey;
+}
