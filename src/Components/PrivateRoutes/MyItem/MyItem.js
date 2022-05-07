@@ -54,39 +54,31 @@ const MyItem = () => {
       <div className="mx-2">
         <h4 className="my-4 text-center">Total Item: {myItem.length}</h4>
 
-        <div className="border p-4">
-          {myItem.map((item) => (
-            <div>
-              {item.name}
-              <button onClick={() => handleDelete(item._id)}>DELETE</button>
-            </div>
-          ))}
-        </div>
-
         <table class="table table-striped">
           <thead>
             <tr>
               <th>Image</th>
-              <th scope="col-span-6">Name</th>
+              <th scope="col">Name</th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
-              <th scope="col">Delete</th>
+              <th scope="col">Supplier</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {myItem.map((item) => (
               <tr>
                 <td>
-                  <img src={item.image} alt="" className="p-img" />
+                  <img src={item.image} alt="" className="p-img rounded" />
                 </td>
                 <td>{item.name}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
-                <td>{item.seller}</td>
+                <td>{item.supplier}</td>
                 <td>
                   <button
                     onClick={() => handleDelete(item._id)}
-                    className="bg-danger border-0 p-1 text-white rounded"
+                    className="deliver-btn p-2 rounded"
                   >
                     DELETE
                   </button>

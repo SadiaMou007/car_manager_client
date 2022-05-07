@@ -31,7 +31,7 @@ const AddItem = () => {
   };
   return (
     <div className="full-height">
-      <h2 className="my-4 text-center">Add new Inventory</h2>
+      <h4 className="my-4 text-center">Add new Inventory</h4>
       <div className="w-50 mx-auto">
         <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
           <input
@@ -72,7 +72,7 @@ const AddItem = () => {
             type="text"
             {...register("image")}
           />
-          <input type="submit" value="Add Inventory" />
+          <input type="submit" value="Add Inventory" className='update-btn'/>
         </form>
       </div>
     </div>
