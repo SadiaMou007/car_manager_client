@@ -1,0 +1,18 @@
+.bg {
+  background-color: #c70039;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bg-border {
+  border: 1px solid rgba(141, 140, 140, 0.788);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-wrapper input {
+  border: 1px solid lightgray;
+}

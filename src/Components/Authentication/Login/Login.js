@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 import auth from "../../../Firebase/firebase.init";
 import Loading from "../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import "./Login.css";
+import { FaCar } from "react-icons/fa";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -55,64 +57,84 @@ const Login = () => {
   //   navigate(from, { replace: true });
   // }
   return (
-    <div className=" w-50  container-fluid vh-100 my-5 s-container">
-      <div>
-        <h3 className="text-center my-2 text-success">Login</h3>
-        <form onSubmit={handleSubmit}>
-          <div className="p-3">
-            <label htmlFor="email" className="">
-              Email
-            </label>
-            <div className="input-wrapper">
-              <input
-                ref={emailRef}
-                type="email"
-                name="email"
-                id="email"
-                className="w-100 p-2 rounded"
-                required
-              />
+    <div className=" w-75 container-fluid full-height">
+      <div className="row">
+        <div className="col-lg-5 col-md-5 col-sm-12 bg my-5">
+          <div className=" my-5 bg bg-border p-5 ms-5">
+            <div>
+              <FaCar className="icon" />
             </div>
+            <h3>Car Manager</h3>
+            <p>Best Car selling organization</p>
+            <a href="#">Need Help?</a>
           </div>
-          <div className="p-3">
-            <label htmlFor="password">Password</label>
-            <div className="input-wrapper">
-              <input
-                ref={passwordRef}
-                type="password"
-                name="password"
-                id="password"
-                className="w-100 p-2 rounded"
-                required
-              />
-            </div>
-          </div>
+        </div>
+        <div className="col-lg-7 col-md-7 col-sm-12 bg-light my-5">
+          <div>
+            <h3 className="text-center mt-3">LOGIN</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="p-3">
+                <label htmlFor="email" className="">
+                  Email
+                </label>
+                <div className="input-wrapper">
+                  <input
+                    ref={emailRef}
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="w-100 p-2 rounded"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="p-3">
+                <label htmlFor="password">Password</label>
+                <div className="input-wrapper">
+                  <input
+                    ref={passwordRef}
+                    type="password"
+                    name="password"
+                    id="password"
+                    className="w-100 p-2 rounded"
+                    required
+                  />
+                </div>
+              </div>
 
-          <div className="p-3">
-            <button type="submit" className="w-100 p-2 rounded border-0 g-btn">
-              Login
-            </button>
-          </div>
-          {errorMessage}
-        </form>
+              <div className="py-3 w-75 mx-auto">
+                <button
+                  type="submit"
+                  className="w-100 p-2 rounded border-0 update-btn"
+                >
+                  LOGIN
+                </button>
+              </div>
+              {errorMessage}
+            </form>
 
-        <p className="text-center mb-2">
-          New to Car Manager?
-          <Link to={"/signup"} className="text-decoration-none text-primary">
-            Register
-          </Link>
-        </p>
-        <p className="text-center mb-2">
-          Forget Password?{" "}
-          <button
-            className="border-0 bg-white text-primary"
-            onClick={handlePasswordReset}
-          >
-            Reset Password
-          </button>
-        </p>
+            <p className="text-center mb-2">
+              New to Car Manager?
+              <Link
+                to={"/signup"}
+                className="text-decoration-none text-primary"
+              >
+                Register
+              </Link>
+            </p>
+            <p className="text-center mb-2">
+              Forget Password?{" "}
+              <button
+                className="border-0 bg-white text-primary"
+                onClick={handlePasswordReset}
+              >
+                Reset Password
+              </button>
+            </p>
+          </div>
+          <SocialLogin></SocialLogin>
+        </div>
       </div>
-      <SocialLogin></SocialLogin>
     </div>
   );
 };

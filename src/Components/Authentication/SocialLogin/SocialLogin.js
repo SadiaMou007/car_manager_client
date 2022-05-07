@@ -21,8 +21,13 @@ const SocialLogin = () => {
     errorText = <p className="text-danger text-center">{error.message}</p>;
   }
   return (
-    <div>
-      <button onClick={() => signInWithGoogle()}>Sign In with Google</button>
+    <div className="w-75 mx-auto ">
+      <button
+        onClick={() => signInWithGoogle()}
+        className="w-100 p-2 update-btn my-3"
+      >
+        Sign In with Google
+      </button>
       <div> {errorText}</div>
     </div>
   );

@@ -42,9 +42,9 @@ const SignUp = () => {
   }
 
   return (
-    <div className=" w-50  container-fluid signup-container my-5 s-container">
-      <div className="login-c">
-        <h3 className="text-center my-2 text-success">Sign Up</h3>
+    <div className=" w-50 container-fluid mb-5 bg-light rounded pb-4">
+      <div className="">
+        <h3 className="text-center mt-2 p-2">SIGN UP</h3>
         <form onSubmit={handleSignUp}>
           <div className="p-3">
             <label htmlFor="name" className="">
@@ -101,11 +101,11 @@ const SignUp = () => {
               Accept our terms and conditions?{" "}
             </label>
           </div>
-          <div className="p-3">
+          <div className="p-3 w-75 mx-auto">
             <button
               disabled={!agree}
               type="submit"
-              className="w-100 p-2 rounded border-0 g-btn"
+              className="w-100 p-2 rounded border-0 update-btn"
             >
               Sign Up
             </button>
