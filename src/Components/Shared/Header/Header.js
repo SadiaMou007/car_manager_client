@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <Navbar sticky="top" expand="lg" className="navbar">
+    <Navbar sticky="top" expand="lg" className="navbar bg-light">
       <Container>
         <Navbar.Brand href="#">
           <span className="brand">

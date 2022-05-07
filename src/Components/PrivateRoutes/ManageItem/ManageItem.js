@@ -31,10 +31,10 @@ const ManageItem = () => {
   return (
     <div className="full-height">
       <div className="mx-2">
-        <h4 className="my-2 text-center inventory-header">
+        <h4 className="mt-5 mb-2 text-center inventory-header">
           Manage Inventories
         </h4>
-        <h6 className="my-4 text-center inventory-header">
+        <h6 className="mb-4 text-center inventory-header">
           Total Items: {products.length}
         </h6>
 

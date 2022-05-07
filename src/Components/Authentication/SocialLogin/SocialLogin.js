@@ -3,6 +3,7 @@ import auth from "../../../Firebase/firebase.init";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import Loading from "../../Loading/Loading";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
 
 const SocialLogin = () => {
   let errorText;
@@ -26,7 +27,7 @@ const SocialLogin = () => {
         onClick={() => signInWithGoogle()}
         className="w-100 p-2 update-btn my-3"
       >
-        Sign In with Google
+        <FaGoogle /> Sign In with Google
       </button>
       <div> {errorText}</div>
     </div>
