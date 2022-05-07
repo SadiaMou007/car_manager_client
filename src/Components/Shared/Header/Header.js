@@ -55,6 +55,7 @@ const Header = () => {
                   >
                     Logout
                   </button>
+                  {user.email}
                 </>
               ) : (
                 <CustomLink to={"/login"} className="nav-item">
