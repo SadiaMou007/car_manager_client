@@ -90,7 +90,7 @@ const Login = () => {
         </form>
 
         <p className="text-center mb-2">
-          New to Travel World?
+          New to Car Manager?
           <Link to={"/signup"} className="text-decoration-none text-primary">
             Register
           </Link>

@@ -20,7 +20,7 @@ const Inventories = () => {
           INVENTORIES
         </h3>
         <Row xs={1} md={2} lg={2} className="g-4">
-          {products.map((product) => (
+          {products.slice(0, 6).map((product) => (
             <Inventory key={product._id} product={product}></Inventory>
           ))}
         </Row>
