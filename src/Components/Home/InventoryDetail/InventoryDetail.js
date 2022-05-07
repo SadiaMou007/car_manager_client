@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import "./InventoryDetail.css";
 const InventoryDetail = () => {
@@ -23,6 +23,31 @@ const InventoryDetail = () => {
 
   return (
     <div className="container my-5">
+      <h4 className="mt-3 mb-3 text-center">Update Product Quantity</h4>
+      <div className="row g-4 border my-3 p-4">
+        <div className="col-lg-4 col-md-4 col-sm-12">
+          <button className="w-75 mx-auto p-2">DELIVERED</button>
+        </div>
+        <div className="col-lg-8 col-md-8 col-sm-12">
+          <div className="d-flex">
+            <form className="w-100 mx-auto">
+              <div className="w-75 mx-auto">
+                <input
+                  type="number"
+                  name="quantity"
+                  id=""
+                  placeholder="Enter quantity"
+                  className="w-75 p-2"
+                />
+                <input type="submit" value="ADD" className="w-25 p-2" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h4 className="mb-3 mt-5 text-center">Update Product Quantity</h4>
+
       <Card>
         <div className="d-flex">
           <div className="w-50 my-auto">
@@ -57,7 +82,7 @@ const InventoryDetail = () => {
               <p>{description}</p>
             </div>
           </Card.Text>
-          <div className="w-100 update">
+          <div className="w-100 update mb-5">
             <button
               className="w-75 py-3 update-btn rounded"
               onClick={navigateToManageInventory}

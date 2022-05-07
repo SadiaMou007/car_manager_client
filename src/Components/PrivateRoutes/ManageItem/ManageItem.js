@@ -9,6 +9,9 @@ const ManageItem = () => {
   const navigateToAddItem = (id) => {
     navigate("/addItem");
   };
+  const navigateToProductDetail = (id) => {
+    navigate(`/inventory/${id}`);
+  };
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
@@ -43,6 +46,12 @@ const ManageItem = () => {
           {products.map((product) => (
             <div className="m-2 border">
               {product.name}
+              <button
+                className="ms-3"
+                onClick={() => navigateToProductDetail(product._id)}
+              >
+                UPDATE
+              </button>
               <button
                 className="ms-3"
                 onClick={() => handleDelete(product._id)}

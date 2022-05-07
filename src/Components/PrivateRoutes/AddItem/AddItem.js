@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddItem = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -10,6 +12,7 @@ const AddItem = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    // const navigate = useNavigate();
     data.email = user.email;
     const url = `http://localhost:5000/product`;
     fetch(url, {
@@ -24,6 +27,7 @@ const AddItem = () => {
         console.log(result);
       });
     reset();
+    toast("Item added");
   };
   return (
     <div className="full-height">
