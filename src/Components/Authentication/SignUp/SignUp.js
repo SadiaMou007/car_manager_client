@@ -44,7 +44,7 @@ const SignUp = () => {
   return (
     <div className=" w-50 container-fluid mb-5 bg-light rounded pb-4">
       <div className="">
-        <h3 className="text-center mt-2 p-2">SIGN UP</h3>
+        <h3 className="text-center mt-2 p-2 inventory-header">SIGN UP</h3>
         <form onSubmit={handleSignUp}>
           <div className="p-3">
             <label htmlFor="name" className="">

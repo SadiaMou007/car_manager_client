@@ -31,48 +31,52 @@ const AddItem = () => {
   };
   return (
     <div className="full-height">
-      <h4 className="my-4 text-center">Add new Inventory</h4>
+      <h4 className="my-4 text-center inventory-header">Add new Inventory</h4>
       <div className="w-50 mx-auto">
         <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
           <input
-            className="mb-2"
-            placeholder="Name"
+            className="mb-3 p-1 input-border"
+            placeholder="Product name"
             {...register("name", { required: true, maxLength: 20 })}
           />
           <input
-            className="mb-2"
-            placeholder="Supplier"
+            className="mb-3 p-1 input-border"
+            placeholder="Supplier name"
             {...register("supplier", { required: true })}
           />
           <textarea
-            className="mb-2"
+            className="mb-3 p-1 input-border"
             placeholder="Description"
             {...register("description")}
           />
           <textarea
-            className="mb-2"
+            className="mb-3 p-1 input-border"
             placeholder="Features"
             {...register("features")}
           />
           <input
-            className="mb-2"
+            className="mb-3 p-1 input-border"
             placeholder="Price"
             type="number"
             {...register("price")}
           />
           <input
-            className="mb-2"
+            className="mb-3 p-1 input-border"
             placeholder="Quantity"
             type="number"
             {...register("quantity")}
           />
           <input
-            className="mb-2"
+            className="mb-3 p-1 input-border"
             placeholder="Photo URL"
             type="text"
             {...register("image")}
           />
-          <input type="submit" value="Add Inventory" className='update-btn'/>
+          <input
+            type="submit"
+            value="Add Inventory"
+            className="update-btn p-2"
+          />
         </form>
       </div>
     </div>

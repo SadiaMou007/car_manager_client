@@ -30,57 +30,67 @@ const ManageItem = () => {
   };
   return (
     <div className="full-height">
-      <div className="container">
-        <h4 className="my-2 text-center">Manage Inventories</h4>
-        <h6 className="my-4 text-center">Total Items: {products.length}</h6>
+      <div className="mx-2">
+        <h4 className="my-2 text-center inventory-header">
+          Manage Inventories
+        </h4>
+        <h6 className="my-4 text-center inventory-header">
+          Total Items: {products.length}
+        </h6>
 
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Supplier</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((item) => (
+        <div className="table-responsive">
+          <table class="table table-striped">
+            <thead>
               <tr>
-                <td>
-                  <img src={item.image} alt="" className="p-img rounded" />
-                </td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.quantity}</td>
-                <td>{item.supplier}</td>
-                <td>
-                  <button
-                    className="deliver-btn p-2 rounded"
-                    onClick={() => navigateToProductDetail(item._id)}
-                  >
-                    UPDATE
-                  </button>
-                </td>
-                <td>
-                <button
-                  onClick={() => handleDelete(item._id)}
-                  className="deliver-btn p-2 rounded"
-                >
-                  DELETE
-                </button>
-              </td>
+                <th>Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Supplier</th>
+                <th></th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {products.map((item) => (
+                <tr>
+                  <td>
+                    <img src={item.image} alt="" className="p-img rounded" />
+                  </td>
+                  <td>{item.name}</td>
+                  <td>{item.price}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.supplier}</td>
+                  <td>
+                    <div className="row">
+                      <div className="col-lg-6 col-md-6 col-sm-12">
+                        <button
+                          className="text-success border border-success bg-white p-2 rounded"
+                          onClick={() => navigateToProductDetail(item._id)}
+                        >
+                          UPDATE
+                        </button>
+                      </div>
+                      <div className="col-lg-6 col-md-6 col-sm-12">
+                        <button
+                          onClick={() => handleDelete(item._id)}
+                          className="deliver-btn p-2 rounded"
+                        >
+                          DELETE
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-        <div className="w-50 mx-auto">
+        <div className="w-50 mx-auto my-4">
           <button
             onClick={navigateToAddItem}
-            className="w-100  update-btn rounded mx-auto"
+            className="w-100 p-2 mb-5 update-btn rounded mx-auto"
           >
             ADD INVENTORY
           </button>

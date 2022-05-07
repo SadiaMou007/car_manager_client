@@ -76,7 +76,9 @@ const InventoryDetail = () => {
 
   return (
     <div className="container my-5">
-      <h4 className="mt-3 mb-3 text-center">Update Product Quantity</h4>
+      <h4 className="mt-3 mb-3 text-center inventory-header">
+        Update Product Quantity
+      </h4>
       <div className="row g-4 border my-3 p-4">
         <div className="col-lg-4 col-md-4 col-sm-12">
           <button
@@ -108,7 +110,9 @@ const InventoryDetail = () => {
         </div>
       </div>
 
-      <h4 className="mb-3 mt-5 text-center">Product Details</h4>
+      <h4 className="mb-3 mt-5 text-center inventory-header">
+        Product Details
+      </h4>
 
       <Card>
         <div className="d-flex">

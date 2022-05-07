@@ -71,7 +71,7 @@ const Login = () => {
         </div>
         <div className="col-lg-7 col-md-7 col-sm-12 bg-light my-5">
           <div>
-            <h3 className="text-center mt-3">LOGIN</h3>
+            <h3 className="text-center mt-3 inventory-header">LOGIN</h3>
             <form onSubmit={handleSubmit}>
               <div className="p-3">
                 <label htmlFor="email" className="">

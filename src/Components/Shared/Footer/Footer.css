@@ -1,6 +1,8 @@
 .footer {
   background-color: rgb(19, 16, 16);
   color: white;
+  width: 100%;
+  bottom: 0;
 }
 .pink {
   color: #900c3f;

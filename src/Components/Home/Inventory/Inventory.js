@@ -20,9 +20,8 @@ const Inventory = ({ product }) => {
             <Card.Title>
               <div className="p-4">
                 <div className="text-center">{name}</div>
-                <div className="card-price text-center mt-3">
-                  {" "}
-                  <span className="small me-4 start"> Starting at</span>${price}
+                <div className="card-price text-center mt-3 p-2">
+                  <span className="small me-4 start"></span>${price}
                 </div>
               </div>
             </Card.Title>

@@ -52,41 +52,44 @@ const MyItem = () => {
   return (
     <div className="full-height">
       <div className="mx-2">
-        <h4 className="my-4 text-center">Total Item: {myItem.length}</h4>
-
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Supplier</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {myItem.map((item) => (
+        <h4 className="my-4 text-center inventory-header">
+          Total Item: {myItem.length}
+        </h4>
+        <div className="table-responsive">
+          <table class="table table-striped">
+            <thead>
               <tr>
-                <td>
-                  <img src={item.image} alt="" className="p-img rounded" />
-                </td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.quantity}</td>
-                <td>{item.supplier}</td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(item._id)}
-                    className="deliver-btn p-2 rounded"
-                  >
-                    DELETE
-                  </button>
-                </td>
+                <th>Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Supplier</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {myItem.map((item) => (
+                <tr>
+                  <td>
+                    <img src={item.image} alt="" className="p-img rounded" />
+                  </td>
+                  <td>{item.name}</td>
+                  <td>{item.price}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.supplier}</td>
+                  <td>
+                    <button
+                      onClick={() => handleDelete(item._id)}
+                      className="deliver-btn p-2 rounded"
+                    >
+                      DELETE
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
