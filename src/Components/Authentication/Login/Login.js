@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import {
   useSendPasswordResetEmail,
@@ -22,12 +23,18 @@ const Login = () => {
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const pass = passwordRef.current.value;
-    signInWithEmailAndPassword(email, pass);
+    await signInWithEmailAndPassword(email, pass);
+
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
+    toast("Login Successfull!!");
+    navigate(from, { replace: true });
   };
+
   const handlePasswordReset = async () => {
     const email = emailRef.current.value;
     if (email) {
@@ -43,10 +50,10 @@ const Login = () => {
   if (error) {
     errorMessage = <p className="text-danger text-center">{error.message}</p>;
   }
-  if (user) {
-    toast("Login Successfull!!");
-    navigate(from, { replace: true });
-  }
+  // if (user) {
+  //   toast("Login Successfull!!");
+  //   navigate(from, { replace: true });
+  // }
   return (
     <div className=" w-50  container-fluid vh-100 my-5 s-container">
       <div>
