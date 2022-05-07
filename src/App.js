@@ -16,6 +16,7 @@ import MyItem from "./Components/PrivateRoutes/MyItem/MyItem";
 import Inventories from "./Components/Home/Inventories/Inventories";
 import InventoryDetail from "./Components/Home/InventoryDetail/InventoryDetail";
 import Footer from "./Components/Shared/Footer/Footer";
+import About from "./Components/Home/About/About";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/detail" element={<SignUp></SignUp>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
 
         <Route
           path="/manageItem"
