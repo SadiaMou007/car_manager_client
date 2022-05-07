@@ -13,3 +13,4 @@ const useProducts = () => {
 
 export default useProducts;
 // https://secure-journey-72312.herokuapp.com
+//https://stackoverflow.com/questions/72156463/how-can-i-update-the-ui-while-update-collection-property-from-server-api

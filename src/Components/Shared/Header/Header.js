@@ -29,9 +29,6 @@ const Header = () => {
               <CustomLink to={"/home"} className="nav-item">
                 Home
               </CustomLink>
-              <CustomLink to={"/about"} className="nav-item">
-                About
-              </CustomLink>
               <CustomLink to={"/blogs"} className="nav-item">
                 Blogs
               </CustomLink>

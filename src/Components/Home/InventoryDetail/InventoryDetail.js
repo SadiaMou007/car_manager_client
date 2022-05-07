@@ -32,7 +32,6 @@ const InventoryDetail = () => {
       headers: {
         "content-type": "application/json",
       },
-      // body: JSON.stringify(quantity),
       body: JSON.stringify({ quantity: quantity }),
     })
       .then((res) => res.json())

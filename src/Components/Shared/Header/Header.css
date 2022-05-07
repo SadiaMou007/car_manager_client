@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 35%;
+  width: 30%;
 }
 .item-2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 65%;
+  width: 70%;
 }
 .nav-item {
   color: gray;
