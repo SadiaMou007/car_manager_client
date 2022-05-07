@@ -1,4 +1,5 @@
 import axios from "axios";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
@@ -7,11 +8,25 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [myItem, setMyItem] = useState([]);
 
+  // useEffect(() => {
+  //   const getItems = async () => {
+  //     const email = user.email;
+  //     const url = `http://localhost:5000/products?email=${email}`;
+  //     const { data } = await axios.get(url);
+  //     setMyItem(data);
+  //   };
+  //   getItems();
+  // }, [user]);
   useEffect(() => {
     const getItems = async () => {
       const email = user.email;
       const url = `http://localhost:5000/products?email=${email}`;
-      const { data } = await axios.get(url);
+
+      const { data } = await axios.get(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
       setMyItem(data);
     };
     getItems();

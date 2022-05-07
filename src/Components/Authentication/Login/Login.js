@@ -31,7 +31,7 @@ const Login = () => {
 
     const { data } = await axios.post("http://localhost:5000/login", { email });
     localStorage.setItem("accessToken", data.accessToken);
-    toast("Login Successfull!!");
+    toast("Login Success!!");
     navigate(from, { replace: true });
   };
 

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Card, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import "./InventoryDetail.css";
 const InventoryDetail = () => {
+  const quantityRef = useRef("");
+
   const { inventoryId } = useParams();
   const [product, setProduct] = useState({});
   const navigate = useNavigate();
@@ -21,6 +23,29 @@ const InventoryDetail = () => {
     navigate("/manageItem");
   };
 
+  const handleQuantity = async (e) => {
+    e.preventDefault();
+    const quantity = quantityRef.current.value;
+    const url = `http://localhost:5000/product/${_id}`;
+    await fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      // body: JSON.stringify(quantity),
+      body: JSON.stringify({ quantity: quantity }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+    const url1 = `http://localhost:5000/products/${inventoryId}`;
+    console.log(url1);
+    await fetch(url1)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  };
+
   return (
     <div className="container my-5">
       <h4 className="mt-3 mb-3 text-center">Update Product Quantity</h4>
@@ -30,12 +55,12 @@ const InventoryDetail = () => {
         </div>
         <div className="col-lg-8 col-md-8 col-sm-12">
           <div className="d-flex">
-            <form className="w-100 mx-auto">
+            <form className="w-100 mx-auto" onSubmit={handleQuantity}>
               <div className="w-75 mx-auto">
                 <input
                   type="number"
+                  ref={quantityRef}
                   name="quantity"
-                  id=""
                   placeholder="Enter quantity"
                   className="w-75 p-2"
                 />
