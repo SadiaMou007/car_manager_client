@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
+import "./MyItem.css";
 
 const MyItem = () => {
   const [user] = useAuthState(auth);
@@ -50,7 +51,7 @@ const MyItem = () => {
 
   return (
     <div className="full-height">
-      <div className="container">
+      <div className="mx-2">
         <h4 className="my-4 text-center">Total Item: {myItem.length}</h4>
 
         <div className="border p-4">
@@ -61,6 +62,39 @@ const MyItem = () => {
             </div>
           ))}
         </div>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th scope="col-span-6">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myItem.map((item) => (
+              <tr>
+                <td>
+                  <img src={item.image} alt="" className="p-img" />
+                </td>
+                <td>{item.name}</td>
+                <td>{item.price}</td>
+                <td>{item.quantity}</td>
+                <td>{item.seller}</td>
+                <td>
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="bg-danger border-0 p-1 text-white rounded"
+                  >
+                    DELETE
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

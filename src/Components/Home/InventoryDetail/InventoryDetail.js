@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./InventoryDetail.css";
 const InventoryDetail = () => {
   const quantityRef = useRef("");
-
   const { inventoryId } = useParams();
   const [product, setProduct] = useState({});
   const navigate = useNavigate();
@@ -46,12 +45,36 @@ const InventoryDetail = () => {
       .then((data) => setProduct(data));
   };
 
+  const quantityDecrease = async () => {
+    const url = `http://localhost:5000/order/${_id}`;
+    await fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+    const url1 = `http://localhost:5000/products/${inventoryId}`;
+    console.log(url1);
+    await fetch(url1)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  };
+
   return (
     <div className="container my-5">
       <h4 className="mt-3 mb-3 text-center">Update Product Quantity</h4>
       <div className="row g-4 border my-3 p-4">
         <div className="col-lg-4 col-md-4 col-sm-12">
-          <button className="w-75 mx-auto p-2">DELIVERED</button>
+          <button
+            className="w-75 mx-auto p-2"
+            onClick={() => quantityDecrease()}
+          >
+            DELIVERED
+          </button>
         </div>
         <div className="col-lg-8 col-md-8 col-sm-12">
           <div className="d-flex">
@@ -86,7 +109,10 @@ const InventoryDetail = () => {
                 <div className="my-3 border-line">
                   Supplier Name: {supplier}
                   <div>
-                    <div className="my-3">Available Product: {quantity}</div>
+                    <div className="my-3">
+                      Available Product:
+                      {quantity}
+                    </div>
                   </div>
                 </div>
               </div>
