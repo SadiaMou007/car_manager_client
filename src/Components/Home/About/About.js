@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="">
       <div className="my-5 container bg-light rounded">
-        <h4 className="text-center pink1 p-2">Why Car Manager?</h4>
+        <h4 className="text-center pink1 p-2 ">WHY CAR MANAGER?</h4>
         <h6 className="text-center my-2 w-50 mx-auto">
           We have best transaction policy and active workers for manage our
           inventories. Provide best marketing strategy to increase sell. Provide
@@ -14,35 +14,41 @@ const About = () => {
         </h6>
         <div className="row py-2 px-4">
           <div className="col-lg-4 col-md-6 col-sm-12 border p-3 my-3">
-            <span>
-              <FaMoneyBill className="icon1" />
-            </span>
-            <h5 className="pink1"> BANKING</h5>
-            <ul>
-              <li>ABC Bank Limited</li>
-              <li>Prime Bank Limited</li>
-            </ul>
+            <div className="d-flex justify-content-center align-items-center flex-column">
+              <span>
+                <FaMoneyBill className="icon1" />
+              </span>
+              <h5 className="pink1"> BANKING</h5>
+              <ul>
+                <li>ABC Bank Limited</li>
+                <li>Prime Bank Limited</li>
+              </ul>
+            </div>
           </div>
           <div className="col-lg-4 col-md-6 col-sm-12 border p-3 my-3">
-            <span>
-              <FaUser className="icon1" />
-            </span>
-            <h5 className="pink1"> CLIENTS</h5>
-            <ul>
-              <li>Permanent: 26</li>
-              <li>Contract: 31</li>
-              <li>Recent Buyer: 14</li>
-            </ul>
+            <div className="d-flex justify-content-center align-items-center flex-column">
+              <span>
+                <FaUser className="icon1" />
+              </span>
+              <h5 className="pink1"> CLIENTS</h5>
+              <ul>
+                <li>Permanent: 26</li>
+                <li>Contract: 31</li>
+                <li>Recent Buyer: 14</li>
+              </ul>
+            </div>
           </div>
           <div className="col-lg-4 col-md-6 col-sm-12 border p-3 my-3">
-            <span>
-              <FaWarehouse className="icon1" />
-            </span>
-            <h5 className="pink1"> SERVICES</h5>
-            <p>
-              Our services includes car selling, branding, management, car
-              servicing and car storage
-            </p>
+            <div className="d-flex justify-content-center align-items-center flex-column">
+              <span>
+                <FaWarehouse className="icon1" />
+              </span>
+              <h5 className="pink1"> SERVICES</h5>
+              <p>
+                Our services includes car selling, branding, management, car
+                servicing and car storage
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ const AddItem = () => {
   };
   return (
     <div className="full-height">
-      <h4 className="my-4 text-center inventory-header">Add new Inventory</h4>
+      <h4 className="my-4 text-center inventory-header">ADD NEW INVENTORY</h4>
       <div className="w-50 mx-auto">
         <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
           <input

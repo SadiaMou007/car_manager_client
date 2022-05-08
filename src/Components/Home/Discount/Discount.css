@@ -1,0 +1,38 @@
+.discount {
+  background-color: #c70039;
+}
+.content,
+.content1 {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: auto;
+}
+
+.bg-container {
+  position: relative;
+  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../../Images/Sale/Tesla.jpg");
+  background-size: cover;
+}
+.bg-container1 {
+  position: relative;
+  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../../Images/Sale/Hyundai.jpg");
+  background-size: cover;
+}
+.bg-container::before,
+.bg-container1::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(139, 138, 137, 0.884);
+}

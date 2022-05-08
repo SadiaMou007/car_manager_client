@@ -19,10 +19,8 @@ const Inventory = ({ product }) => {
           <div className="w-50 my-auto">
             <Card.Title>
               <div className="p-4">
-                <div className="text-center">{name}</div>
-                <div className="card-price text-center mt-3 p-2">
-                  <span className="small me-4 start"></span>${price}
-                </div>
+                <div className="text-center pink1">{name}</div>
+                <div className="price text-center pink1">${price}</div>
               </div>
             </Card.Title>
           </div>
@@ -47,7 +45,7 @@ const Inventory = ({ product }) => {
           <div className="w-100 update">
             <button
               onClick={() => navigateToProductDetail(_id)}
-              className="w-75 py-2 update-btn rounded"
+              className="w-50 py-2 update-btn rounded"
             >
               UPDATE
             </button>

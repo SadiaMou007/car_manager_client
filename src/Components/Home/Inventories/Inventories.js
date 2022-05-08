@@ -28,7 +28,7 @@ const Inventories = () => {
           </Row>
           <div className="w-100 update">
             <button
-              className="w-75 py-3 update-btn rounded"
+              className="w-25 py-2 update-btn rounded-pill"
               onClick={navigateToManageInventory}
             >
               MANAGE INVENTORIES

@@ -32,7 +32,7 @@ const ManageItem = () => {
     <div className="full-height">
       <div className="mx-2">
         <h4 className="mt-5 mb-2 text-center inventory-header">
-          Manage Inventories
+          MANAGE INVENTORIES
         </h4>
         <h6 className="mb-4 text-center inventory-header">
           Total Items: {products.length}
@@ -87,10 +87,10 @@ const ManageItem = () => {
           </table>
         </div>
 
-        <div className="w-50 mx-auto my-4">
+        <div className="w-25 mx-auto my-4">
           <button
             onClick={navigateToAddItem}
-            className="w-100 p-2 mb-5 update-btn rounded mx-auto"
+            className="w-100 p-3 mb-5 update-btn rounded-pill mx-auto"
           >
             ADD INVENTORY
           </button>
