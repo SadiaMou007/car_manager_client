@@ -35,10 +35,7 @@ const Login = () => {
       "https://secure-journey-72312.herokuapp.com/login",
       { email }
     );
-    console.log(data);
     localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
-    toast("Login Success!!");
   };
 
   const handlePasswordReset = async () => {
@@ -50,16 +47,18 @@ const Login = () => {
       toast("Enter your email address");
     }
   };
+
   if (loading || sending) {
     return <Loading></Loading>;
+  }
+  if (user) {
+    toast("Login Successfull!!");
+    navigate(from, { replace: true });
   }
   if (error) {
     errorMessage = <p className="text-danger text-center">{error.message}</p>;
   }
-  // if (user) {
-  //   toast("Login Successfull!!");
-  //   navigate(from, { replace: true });
-  // }
+
   return (
     <div className=" w-75 container-fluid full-height">
       <div className="row">

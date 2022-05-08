@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
@@ -11,7 +11,10 @@ import Loading from "../../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const SignUp = () => {
+  const location = useLocation();
+
   const [agree, setAgree] = useState(false);
+  const from = location.state?.from?.pathname || "/";
 
   const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -28,17 +31,17 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(email, pass);
     await updateProfile({ displayName: name });
     console.log("update user profile");
-    navigate("/home");
+    navigate(from, { replace: true });
   };
 
+  if (loading || updating) {
+    return <Loading></Loading>;
+  }
   if (user) {
     console.log("user", user);
   }
   if (error) {
     console.log(error.message);
-  }
-  if (loading || updating) {
-    return <Loading></Loading>;
   }
 
   return (
