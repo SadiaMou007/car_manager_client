@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import "./Discount.css";
 const Discount = () => {
   return (
-    <div className="my-5 discount p-3">
+    <div className="my-5 discount pt-3 pb-4">
       <div className="container">
         <div className="text-center icon mb-3">
           HOT PRODUCT FOR <span>THIS WEEK</span>

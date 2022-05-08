@@ -1,27 +1,19 @@
 import axios from "axios";
-import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import "./MyItem.css";
 
 const MyItem = () => {
   const [user] = useAuthState(auth);
   const [myItem, setMyItem] = useState([]);
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const getItems = async () => {
-  //     const email = user.email;
-  //     const url = `http://localhost:5000/products?email=${email}`;
-  //     const { data } = await axios.get(url);
-  //     setMyItem(data);
-  //   };
-  //   getItems();
-  // }, [user]);
   useEffect(() => {
     const getItems = async () => {
       const email = user.email;
-      const url = `http://localhost:5000/products?email=${email}`;
+      const url = `https://secure-journey-72312.herokuapp.com/products?email=${email}`;
 
       const { data } = await axios.get(url, {
         headers: {
@@ -36,7 +28,7 @@ const MyItem = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://secure-journey-72312.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -47,6 +39,10 @@ const MyItem = () => {
           setMyItem(remaining);
         });
     }
+  };
+
+  const navigateToProductDetail = (id) => {
+    navigate(`/inventory/${id}`);
   };
 
   return (
@@ -78,12 +74,24 @@ const MyItem = () => {
                   <td>{item.quantity}</td>
                   <td>{item.supplier}</td>
                   <td>
-                    <button
-                      onClick={() => handleDelete(item._id)}
-                      className="deliver-btn p-2 rounded"
-                    >
-                      DELETE
-                    </button>
+                    <div className="row">
+                      <div className="col-lg-6 col-md-6 col-sm-12">
+                        <button
+                          onClick={() => navigateToProductDetail(item._id)}
+                          className="text-success border border-success bg-white p-2 rounded"
+                        >
+                          UPDATE
+                        </button>
+                      </div>
+                      <div className="col-lg-6 col-md-6 col-sm-12">
+                        <button
+                          onClick={() => handleDelete(item._id)}
+                          className="deliver-btn p-2 rounded"
+                        >
+                          DELETE
+                        </button>
+                      </div>
+                    </div>
                   </td>
                 </tr>
               ))}

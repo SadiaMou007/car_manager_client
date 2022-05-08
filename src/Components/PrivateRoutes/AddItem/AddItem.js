@@ -14,7 +14,7 @@ const AddItem = () => {
     console.log(data);
     // const navigate = useNavigate();
     data.email = user.email;
-    const url = `http://localhost:5000/product`;
+    const url = `https://secure-journey-72312.herokuapp.com/product`;
     fetch(url, {
       method: "POST",
       headers: {

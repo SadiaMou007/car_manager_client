@@ -10,7 +10,7 @@ const InventoryDetail = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = `http://localhost:5000/products/${inventoryId}`;
+    const url = `https://secure-journey-72312.herokuapp.com/products/${inventoryId}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
@@ -26,7 +26,7 @@ const InventoryDetail = () => {
   const handleQuantity = async (e) => {
     e.preventDefault();
     const quantity = quantityRef.current.value;
-    const url = `http://localhost:5000/product/${_id}`;
+    const url = `https://secure-journey-72312.herokuapp.com/product/${_id}`;
     await fetch(url, {
       method: "PUT",
       headers: {
@@ -38,18 +38,18 @@ const InventoryDetail = () => {
       .then((result) => {
         console.log(result);
       });
-    const url1 = `http://localhost:5000/products/${inventoryId}`;
+    const url1 = `https://secure-journey-72312.herokuapp.com/products/${inventoryId}`;
     console.log(url1);
     await fetch(url1)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        setQ(" ");
+        setQ("Available");
       });
   };
 
   const quantityDecrease = async () => {
-    const url = `http://localhost:5000/order/${_id}`;
+    const url = `https://secure-journey-72312.herokuapp.com/order/${_id}`;
     await fetch(url, {
       method: "PUT",
       headers: {
@@ -63,14 +63,16 @@ const InventoryDetail = () => {
           console.log(result.error);
           setQ(result.error);
         } else {
-          setQ(" ");
+          setQ("Available");
         }
       });
-    const url1 = `http://localhost:5000/products/${inventoryId}`;
+    const url1 = `https://secure-journey-72312.herokuapp.com/products/${inventoryId}`;
     console.log(url1);
     await fetch(url1)
       .then((res) => res.json())
-      .then((data) => setProduct(data));
+      .then((data) => {
+        setProduct(data);
+      });
   };
 
   return (
@@ -120,7 +122,7 @@ const InventoryDetail = () => {
               <div className="p-5">
                 <div>
                   <div className="my-3 yellow">
-                    Available Product:
+                    Product Quantity:
                     <span className="ms-2"> {quantity}</span>
                     <span className="ms-2 pink1"> {q}</span>
                   </div>
@@ -151,7 +153,7 @@ const InventoryDetail = () => {
           </Card.Text>
           <div className="w-100 update mb-5">
             <button
-              className="w-75 py-3 update-btn rounded"
+              className="w-25 py-3 update-btn rounded-pill"
               onClick={navigateToManageInventory}
             >
               MANAGE INVENTORIES

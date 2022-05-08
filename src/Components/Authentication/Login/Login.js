@@ -31,10 +31,14 @@ const Login = () => {
     const pass = passwordRef.current.value;
     await signInWithEmailAndPassword(email, pass);
 
-    const { data } = await axios.post("http://localhost:5000/login", { email });
+    const { data } = await axios.post(
+      "https://secure-journey-72312.herokuapp.com/login",
+      { email }
+    );
+    console.log(data);
     localStorage.setItem("accessToken", data.accessToken);
-    toast("Login Success!!");
     navigate(from, { replace: true });
+    toast("Login Success!!");
   };
 
   const handlePasswordReset = async () => {
